@@ -30,10 +30,15 @@ below are the list of exposed endpoints on it
 3 -  http://localhost:8081/student-all'     // fetches all the photos of all the students
 
 4] To run Chrome Extension 
+
     -- goto Chrome and type in the URL chrome://extensions
+    
     -- enable the Developer Tool on right top corner of chrome
+    
     -- click on Load Unpack
+    
     -- select the eLitmus-chrome-extension folder
+    
 5] you can see the extension available now in chrome with name as eLitmus.
     
     

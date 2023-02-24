@@ -7,27 +7,31 @@ Steps to run application -->
 1] download or clone from github
 
 2] prerequisite -> 
-node.js
-chrome
+
+    -- node.js
+    -- chrome
 
 3] Backend setup ->
 Make sure the node is installed 
 try below command to check
-node -v
-npm -v
+
+    -- node -v
+    -- npm -v
 locate the folder "node-server"
 run below command in cmd after navigating to folder "node-server"
-npm install  // installs the dependencies
-node server.js  // runs the server
+
+    -- npm install  // installs the dependencies
+    -- node server.js  // runs the server
+    
 it will run the server at http://localhost:8081 
 
 below are the list of exposed endpoints on it
 
-1 -  http://localhost:8081/student-upload   // uploads the pictures of user activities
+    1 -  http://localhost:8081/student-upload   // uploads the pictures of user activities
 
-2 -  http://localhost:8081/create-student   // creates the student details in DB
+    2 -  http://localhost:8081/create-student   // creates the student details in DB
 
-3 -  http://localhost:8081/student-all'     // fetches all the photos of all the students
+    3 -  http://localhost:8081/student-all'     // fetches all the photos of all the students
 
 4] To run Chrome Extension 
 

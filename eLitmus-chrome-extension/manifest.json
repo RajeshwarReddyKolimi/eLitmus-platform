@@ -1,0 +1,21 @@
+{
+  "name": "eLitmus",
+  "version": "1.0",
+  "description": "eLitmus-platform support",
+  "manifest_version": 3,
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "http://*/",
+    "https://*/",
+    "<all_urls>",
+    "storage"
+  ],
+  "host_permissions": [
+    "https://*"
+  ],
+  "action": {
+    "default_title": "Click Me",
+    "default_popup": "Index.html"
+  }
+}

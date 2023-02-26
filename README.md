@@ -44,5 +44,14 @@ below are the list of exposed endpoints on it
     -- select the eLitmus-chrome-extension folder
     
 5] you can see the extension available now in chrome with name as eLitmus.
+
+6] Before testing the extension make sure that any random website is opened.
+
+7] Enter the details and click start test. It will capture the images every 3 minutes.
+
+8] To see the saved images click on admin dashboard and enter details as
+
+    Id: Abc
     
+    Password: Abc@123
     

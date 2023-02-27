@@ -1,7 +1,10 @@
 document.getElementById("login").addEventListener("click", () => {
     var id = document.getElementById("id").value;
     var pass = document.getElementById("password").value;
+    var messageElement = document.getElementById("message")
     if (id === "Admin" && pass === "Admin@123") {
+        messageElement.innerText = "Loading data...";
+        messageElement.style.display = "block"
         var xhttp = new XMLHttpRequest();
         var myTableDiv = document.getElementById("myDynamicTable");
         var table = document.createElement('TABLE');
@@ -9,17 +12,16 @@ document.getElementById("login").addEventListener("click", () => {
 
         var tableBody = document.createElement('TBODY');
         table.appendChild(tableBody);
-        xhttp.onreadystatechange = function () {
-
+        xhttp.onerror = function () {
+            messageElement.innerText = "error in fetching data, contact system administrator";
+            messageElement.style.display = "block"
+        }
+        xhttp.onload = function () {
             var data = JSON.parse(this.response);
-
             console.log(data);
-
             for (var i = 0; i < data.length; i++) {
                 var tr = document.createElement('TR');
                 tableBody.appendChild(tr);
-
-
                 var td1 = document.createElement('TD');
                 td1.width = '75';
                 td1.innerText = data[i].mail;
@@ -29,22 +31,21 @@ document.getElementById("login").addEventListener("click", () => {
                 td3.appendChild(document.createTextNode(data[i].time));
                 tr.appendChild(td3);
                 var td2 = document.createElement('TD');
-
                 var img = document.createElement("img");
                 img.src = data[i].picture;
                 img.style.maxWidth = "200px"
                 td2.appendChild(img);
                 tr.appendChild(td2);
-
             }
             myTableDiv.appendChild(table);
             document.getElementById("student").style.display = "none";
         }
-
-    };
-    xhttp.open("GET", "http://localhost:8081/student-all", true);
-    xhttp.setRequestHeader('Access-Control-Allow-Origin', '*');
-    xhttp.setRequestHeader('Content-type', 'application/json');
-
-    xhttp.send();
+        xhttp.open("GET", "http://localhost:8081/student-all", true);
+        xhttp.setRequestHeader('Access-Control-Allow-Origin', '*');
+        xhttp.setRequestHeader('Content-type', 'application/json');
+        xhttp.send();
+    } else {
+        messageElement.innerText = "Id or password is wrong";
+        messageElement.style.display = "block"
+    }
 });

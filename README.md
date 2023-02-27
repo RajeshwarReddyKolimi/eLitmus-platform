@@ -51,7 +51,7 @@ below are the list of exposed endpoints on it
 
 8] To see the saved images click on admin dashboard and enter details as
 
-    Id: Abc
+    Id: Admin
     
-    Password: Abc@123
+    Password: Admin@123
     
